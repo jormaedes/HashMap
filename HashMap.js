@@ -50,4 +50,11 @@ class HashMap {
 			this._grow();
 		}
 	}
+
+	get(key) {
+		const index = this.hash(key);
+		const bucket = this._getBucket(index);
+		const entry = bucket.find((e) => e[0] === key);
+		return entry ? entry[1] : null;
+	}
 }
