@@ -32,7 +32,7 @@ class HashMap {
 			return;
 		}
 
-		this.buckets.push([key, value]);
+		bucket.push([key, value]);
 		this.size++;
 
 		if (this.size / this.capacity > this.loadFactor) {
