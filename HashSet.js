@@ -10,6 +10,10 @@ class HashSet {
 	has(key) {
 		return this._map.has(key);
 	}
+
+	remove(key) {
+		return this._map.remove(key);
+	}
 }
 
 export { HashSet };
