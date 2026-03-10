@@ -22,6 +22,10 @@ class HashSet {
 	clear() {
 		this._map.clear();
 	}
+
+	keys() {
+		return this._map.keys();
+	}
 }
 
 export { HashSet };
