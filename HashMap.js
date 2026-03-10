@@ -75,4 +75,8 @@ class HashMap {
 		this.size--;
 		return true;
 	}
+
+	length() {
+		return this.size;
+	}
 }
