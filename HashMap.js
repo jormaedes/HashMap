@@ -92,4 +92,8 @@ class HashMap {
 	values() {
 		return this.buckets.flat().map((e) => e[1]);
 	}
+
+	entries() {
+		return this.buckets.flat();
+	}
 }
