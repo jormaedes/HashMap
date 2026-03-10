@@ -57,4 +57,11 @@ class HashMap {
 		const entry = bucket.find((e) => e[0] === key);
 		return entry ? entry[1] : null;
 	}
+
+	has(key) {
+		const index = this.hash(key);
+		const bucket = this._getBucket(index);
+		return bucket.some((e) => e[0] === key);
+	}
+	
 }
