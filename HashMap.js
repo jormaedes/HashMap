@@ -84,4 +84,9 @@ class HashMap {
 		this.buckets = new Array(this.capacity).fill(null).map(() => []);
 		this.size = 0;
 	}
+
+	keys() {
+		return this.buckets.flat().map((e) => e[0]);
+	}
+
 }
