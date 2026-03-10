@@ -21,4 +21,22 @@ class HashMap {
 		}
 		return this.buckets[index];
 	}
+
+	set(key, value) {
+		const index = this.hash(key);
+		const bucket = this._getBucket(index);
+
+		const exists = bucket.find((e) => e[0] === key);
+		if (exists) {
+			exists[1] = value;
+			return;
+		}
+
+		this.buckets.push([key, value]);
+		this.size++;
+
+		if (this.size / this.capacity > this.loadFactor) {
+			this._grow();
+		}
+	}
 }
