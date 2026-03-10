@@ -97,3 +97,5 @@ class HashMap {
 		return this.buckets.flat();
 	}
 }
+
+export {HashMap};
