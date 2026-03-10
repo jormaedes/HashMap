@@ -18,6 +18,10 @@ class HashSet {
 	length() {
 		return this._map.length();
 	}
+
+	clear() {
+		this._map.clear();
+	}
 }
 
 export { HashSet };
