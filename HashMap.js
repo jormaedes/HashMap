@@ -63,5 +63,16 @@ class HashMap {
 		const bucket = this._getBucket(index);
 		return bucket.some((e) => e[0] === key);
 	}
-	
+
+	remove(key) {
+		const index = this.hash(key);
+		const bucket = this._getBucket(index);
+		const entryIndex = bucket.findIndex((e) => e[0] === key);
+
+		if (entryIndex === -1) return false;
+
+		bucket.splice(entryIndex, 1);
+		this.size--;
+		return true;
+	}
 }
