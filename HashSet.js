@@ -6,6 +6,10 @@ class HashSet {
 	add(key) {
 		this._map.set(key, true);
 	}
+
+	has(key) {
+		return this._map.has(key);
+	}
 }
 
 export { HashSet };
