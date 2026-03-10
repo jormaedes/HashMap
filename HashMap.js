@@ -22,6 +22,17 @@ class HashMap {
 		return this.buckets[index];
 	}
 
+	_grow() {
+		const allEntries = this.buckets.flat();
+		this.capacity *= 2;
+		this.buckets = new Array(this.capacity).fill(null).map(() => []);
+		this.size = 0;
+
+		for (const [key, value] of allEntries) {
+			this.set(key, value);
+		}
+	}
+
 	set(key, value) {
 		const index = this.hash(key);
 		const bucket = this._getBucket(index);
