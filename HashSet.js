@@ -14,6 +14,10 @@ class HashSet {
 	remove(key) {
 		return this._map.remove(key);
 	}
+
+	length() {
+		return this._map.length();
+	}
 }
 
 export { HashSet };
