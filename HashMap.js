@@ -23,7 +23,7 @@ class HashMap {
 	}
 
 	_grow() {
-		const allEntries = this.buckets.flat();
+		const allEntries = this.entries();
 		this.capacity *= 2;
 		this.buckets = new Array(this.capacity).fill(null).map(() => []);
 		this.size = 0;
@@ -86,11 +86,11 @@ class HashMap {
 	}
 
 	keys() {
-		return this.buckets.flat().map((e) => e[0]);
+		return this.entries().map((e) => e[0]);
 	}
 
 	values() {
-		return this.buckets.flat().map((e) => e[1]);
+		return this.entries().map((e) => e[1]);
 	}
 
 	entries() {
