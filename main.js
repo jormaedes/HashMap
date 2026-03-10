@@ -1,4 +1,5 @@
 import { HashMap } from "./HashMap.js";
+import { HashSet } from "./HashSet.js";
 
 const test = new HashMap();
 
@@ -48,3 +49,15 @@ console.log("entries:", test.entries());
 test.clear();
 console.log("\n=== After clear() ===");
 console.log("length:", test.length());       // 0
+
+
+console.log("\n=== HashSet (extra credit) ===");
+const set = new HashSet();
+set.add("angola");
+set.add("javascript");
+set.add("angola"); // duplicate
+console.log("length:", set.length());              // 2
+console.log("has('angola'):", set.has("angola"));  // true
+set.remove("angola");
+console.log("has('angola') after remove:", set.has("angola")); // false
+console.log("keys:", set.keys());
